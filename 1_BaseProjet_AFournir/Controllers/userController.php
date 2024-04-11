@@ -6,20 +6,47 @@ $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri === '/inscription') {
     if (isset($_POST['btnEnvoi'])){
-        createUser($pdo);
-        header('location:/connexion');
+        $messageError = verifEmptyData();
+        if (!$messageError)
+        {
+            createUser($pdo);
+            header('location:/connexion');
+        }
     }
-    
     $title = "Inscription";
     $template = "Views/Users/inscriptionOrEditProfil.php";
     require_once("Views/base.php");
 
-} 
+}
 elseif ($uri === "/connexion") {
+    if (isset($_POST['btnEnvoi'])) {
+        $erreur = false;
+        
+        if (connectUser($pdo))
+        {
+            header("location:/index.php");
+        }
+        else
+        {
+            $erreur = true;
+        }
+    }
     $title = "Connexion";
     $template = "Views/Users/connexion.php";
     require_once("Views/base.php");
 }
+elseif ($uri === "/deconnexion")
+{
+    session_destroy();
+    header("location:/");
+}
+elseif ($uri === "/profil")
+{
+    $title = "Mise à jour du profil";
+    $template = "Views/Users/inscriptionOrEditProfil.php";
+    require_once("Views/base.php");
+}
+
 
 
 

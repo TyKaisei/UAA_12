@@ -12,13 +12,13 @@
 </head>
 <body>
     <header>
-        <?php require_once("/UAA12/Site/1_BaseProjet_AFournir/Views/Components/navBar.php"); ?>
+        <?php require_once("Views/Components/navBar.php"); ?>
     </header>
     <main>
         <?php require_once($template); ?>
     </main>
     <footer>
-        <?php require_once("/UAA12/Site/1_BaseProjet_AFournir/Views/Components/footer.php") ?>
+        <?php require_once("Views/Components/footer.php") ?>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
