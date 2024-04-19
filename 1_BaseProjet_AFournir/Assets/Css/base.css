@@ -8,17 +8,17 @@ header {
     padding: 10px;
 }
 
-ul {
-    list-style-type: none;
-}
+    ul {
+        list-style-type: none;
+    }
 
-ul li {
-    padding: 15px;
-}
+    ul li {
+        padding: 15px;
+    }
 
-ul li a {
-    color: white;
-    font-size: larger;
+    ul li a {
+        color: white;
+        font-size: larger;
 }
 .imageMenu {
     color: azure;
@@ -132,4 +132,8 @@ a {
     width: 300px;
     margin: 20px;
     padding: 10px;
+}
+
+.hover-vert:hover {
+    background-color: rgb(92, 131, 116);
 }

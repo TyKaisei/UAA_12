@@ -1,8 +1,9 @@
 <?php
-
 require_once("Models/userModel.php");
 
+
 $uri = $_SERVER['REQUEST_URI'];
+
 
 if ($uri === '/inscription') {
     if (isset($_POST['btnEnvoi'])){
@@ -35,27 +36,34 @@ elseif ($uri === "/connexion") {
     $template = "Views/Users/connexion.php";
     require_once("Views/base.php");
 }
-elseif ($uri === "/deconnexion")
-{
+elseif ($uri === "/deconnexion") {
     session_destroy();
     header("location:/");
 }
-elseif ($uri === "/profil")
-{
+elseif ($uri === "/profil") {
+    $title = "Mise à jour du profil";
+    $template = "Views/Users/profil.php";
+    require_once("Views/base.php");
+}
+elseif ($uri === "/updateProfil") {
+    if (isset($_POST['btnEnvoi'])){
+        $messageError = verifEmptyData();
+        if (!$messageError){
+            updateUser($pdo);
+            updateSession($pdo);
+            header('location:/profil');
+        }
+    }
     $title = "Mise à jour du profil";
     $template = "Views/Users/inscriptionOrEditProfil.php";
     require_once("Views/base.php");
 }
-
-
-
-
-
-
-
-
-
-
+elseif ($uri === "/deleteProfil") {
+    deleteOptionSchoolsFromUser($pdo);
+    deleteAllSchoolsFromUser($pdo);
+    deleteUser($pdo);
+    header("location:/deconnexion");
+}
 elseif ($uri === "/Itn") {
     $title = "Itn";
     $template = "Views/VoirEcole.php";
