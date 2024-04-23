@@ -1,6 +1,6 @@
 
         <h1>Voir l'école => Nom de l'école</h1>
-            <img class="imageMilieu" src="/Assets/Images/itnIm.jpeg" alt="Image de l'école">
+            <img class="imageMilieu" src="Assets/Images/itnIm.jpeg" alt="Image de l'école">
         <div class="flexible wrap space-around">
             <div class="card border">
                 <h2>Informations générales</h2>

@@ -1,0 +1,59 @@
+.cadre {
+    width: 400px;
+    margin: 0 auto;
+    /* Centrage horizontal */
+    border: 1px solid #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.titre {
+    text-align: center;
+    font-size: 58px;
+    margin-top: 50px;
+    font-weight: 600;
+    color: rgb(24, 61, 61);
+    text-decoration: underline;
+    margin-bottom: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-li {
+    font-size: 24px;
+    padding-left: 0px;
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profil-btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-modifier {
+    background-color: rgb(24, 61, 61);
+    color: white;
+}
+
+.btn-supprimer {
+    background-color: rgb(24, 61, 61);
+    color: white;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profil-btn a {
+    text-decoration: none;
+    color: white;
+}

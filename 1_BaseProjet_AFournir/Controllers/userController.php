@@ -45,6 +45,13 @@ elseif ($uri === "/profil") {
     $template = "Views/Users/profil.php";
     require_once("Views/base.php");
 }
+elseif ($uri === "/mesEcoles") {
+    $schools = selectMySchools($pdo);
+
+    $title = "Mes Écoles";
+    $template = "Views/pageAccueil.php";
+    require_once("Views/base.php");
+}
 elseif ($uri === "/updateProfil") {
     if (isset($_POST['btnEnvoi'])){
         $messageError = verifEmptyData();
@@ -64,6 +71,8 @@ elseif ($uri === "/deleteProfil") {
     deleteUser($pdo);
     header("location:/deconnexion");
 }
+
+
 elseif ($uri === "/Itn") {
     $title = "Itn";
     $template = "Views/VoirEcole.php";

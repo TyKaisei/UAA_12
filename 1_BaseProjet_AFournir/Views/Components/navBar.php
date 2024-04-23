@@ -3,6 +3,7 @@
     <li class="menu hover-vert"><a href="index.php">Home</a></li>
 
     <?php if (isset($_SESSION["user"])) : ?> 
+        <li class="menu hover-vert"><a href="mesEcoles">Mes Écoles</a></li>
         <li class="menu hover-vert"><a href="profil">Profil</a></li>
         <li class="menu hover-vert"><a href="deconnexion">Déconnexion</a></li>
     <?php else : ?>

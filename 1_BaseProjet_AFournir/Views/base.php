@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Assets/Css/animation.css">
     <link rel="stylesheet" href="Assets/Css/flex.css">
     <link rel="stylesheet" href="Assets/Css/form.css">
+    <link rel="stylesheet" href="Assets/Css/profil.css">
     <title><?= $title ?></title>
 </head>
 <body>
