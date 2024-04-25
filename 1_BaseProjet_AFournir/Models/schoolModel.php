@@ -67,3 +67,38 @@ function selectAllOptions($pdo) {
         die($message);
     }
 }
+
+function createSchool($pdo) {
+    try {
+        $query = 'insert into school (schoolNom, schoolAdresse, schoolVille, schoolCodePostal, schoolNumero, schoolImage, utilisateurId)
+        values (:schoolNom, :schoolAdresse, :schoolVille, :schoolCodePostal, :schoolNumero, :schoolImage, :utilisateurId)';
+        $addSchool = $pdo->prepare($query);
+        $addSchool->execute([
+        'schoolNom' => $_POST["nom"],
+        'schoolAdresse' => $_POST["adresse"],
+        'schoolVille' => $_POST["ville"],
+        'schoolCodePostal' => $_POST["code=postal"],
+        'schoolNumero' => $_POST["phone=number"],
+        'schoolImage' => $_POST["image"],
+        'utilisateurId' => $_SESSION["user"]->id
+    ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function ajouterOptionEcole($pdo, $schoolId, $optionId) {
+    try {
+        $query = 'insert intro option_ecole (schoolId, optionScolaireId) 
+        values (:schoolId, :optionScolaireId)';
+        $deleteAllSchoolsFromId = $pdo->prepare($query);
+        $deleteAllSchoolsFromId->execute([
+            'schoolId' => $schoolId,
+            'optionScolaireId' => $optionId
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}

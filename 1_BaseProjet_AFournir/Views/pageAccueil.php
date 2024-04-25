@@ -1,5 +1,13 @@
-<h1>Liste des écoles répertoriées</h1>
-        
+<?php if ($uri === '/mesEcoles') : ?>
+    <h1>Vos Écoles</h1>
+<?php else : ?>
+    <h1>Liste des écoles répertoriées</h1>
+<?php endif ?>
+
+<?php if ($uri === '/mesEcoles' && isset($_SESSION["user"])) : ?>
+    <a href="createSchool">Ajouter une école</a>
+<?php endif ?>
+
 <div class="flexible wrap space-around">
     <?php foreach ($schools as $school) : ?>
         <div class="border card">
@@ -12,6 +20,11 @@
                     <p><span><?= $school->schoolAdresse ?></span> - <span><?= $school->schoolCodePostal . " " . $school->schoolVille ?></span></p>
                     <h3><?= $school->schoolNumero ?></h3>
                     <a href="voirEcole.php" class="btn btn-page">Voir l'école</a>
+                    <?php if ($uri === '/mesEcoles') : ?>
+                        <p><a href="deleteEcole?schoolId=<?= $school->schoolId ?>">Supprimer l'école</a></p>
+                        <p><a href="updateEcole?schoolId=<?= $school->schoolId ?>">Modifier l'école</a></p>
+                    <?php endif ?>
+
                 </div>
             </div>
         </div>

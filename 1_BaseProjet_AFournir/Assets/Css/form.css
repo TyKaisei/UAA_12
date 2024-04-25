@@ -89,3 +89,7 @@ form input {
 a{
     text-decoration: none;
 }
+
+.form-file {
+    margin-left: 460px;
+}
