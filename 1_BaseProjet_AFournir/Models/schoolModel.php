@@ -173,7 +173,7 @@ function createSchool($pdo) {
 function AjouterOptionEcole($pdo, $schoolId, $optionId) {
     try {
         $query = 'insert into option_ecole (schoolId, optionScolaireId) values (:schoolId, :optionScolaireId)';
-        $deleteAllSchoolsFromUser = $pdo->prepare();
+        $deleteAllSchoolsFromUser = $pdo->prepare($query);
         $deleteAllSchoolsFromUser->execute([
             'schoolId' => $schoolId,
             'optionScolaireId' => $optionId
