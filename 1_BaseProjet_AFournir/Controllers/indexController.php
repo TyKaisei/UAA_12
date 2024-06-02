@@ -5,7 +5,6 @@ require_once("Models/schoolModel.php");
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri === '/index.php' || $uri === "/") {
-    
     $schools = selectAllSchools($pdo);
     
     $title = "Page d'accueil";
