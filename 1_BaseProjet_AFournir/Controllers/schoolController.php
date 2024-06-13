@@ -28,24 +28,23 @@ elseif ($uri === '/createSchool') {
     $template = "Views/Schools/editOrCreateSchool.php";
     require_once("Views/base.php");
 }
-elseif (isset($_GET["schoolId"]) && $uri === "/voirEcole?schoolId=" . $_GET["schoolId"]) {
-    if (isset($_POST['btnEnvoi'])) {
-        updateSchool($pdo);
-    }
-    
+elseif (isset($_GET["schoolId"]) && $uri === "/voirEcole.php?schoolId=" . $_GET["schoolId"]) {
     $school = selectOneSchool($pdo);
-    $optionsActiveSchool = selectOptionsActiveSchool($pdo); 
-    $options = selectAllOptions($pdo);
+    $options = selectOptionsActiveSchool($pdo);
     $title = "Ajout d'une école";
-    $template = "Views/Schools/VoirEcole.php";
+    $template = "Views/Schools/voirEcole.php";
     require_once("Views/base.php");
 }
-elseif (isset($_GET["schoolId"]) && $uri == "deleteEcole?schoolId=" . $_GET["schoolId"]) {
+
+
+elseif (isset($_GET["schoolId"]) && $uri === "/deleteEcole?schoolId=" . $_GET["schoolId"]) {
     deleteOptionSchool($pdo);
     deleteOneSchool($pdo);
-    header("location/mesEcoles");
+    header('location:/mesEcoles');
 }
-elseif (isset($_GET["schoolId"]) && $uri == "/updateEcole?schoolId=" . $_GET["schoolId"]) {
+
+
+elseif (isset($_GET["schoolId"]) && $uri === "/updateEcole?schoolId=" . $_GET["schoolId"]) {
     if (isset($_POST['btnEnvoi'])) {
         updateSchool($pdo);
         deleteOptionSchool($pdo);

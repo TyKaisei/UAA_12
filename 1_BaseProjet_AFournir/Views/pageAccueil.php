@@ -19,7 +19,7 @@
                 <div class="center">
                     <p><span><?= $school->schoolAdresse ?></span> - <span><?= $school->schoolCodePostal . " " . $school->schoolVille ?></span></p>
                     <h3><?= $school->schoolNumero ?></h3>
-                    <a href="voirEcole.php" class="btn btn-page">Voir l'école</a>
+                    <a href="voirEcole.php?schoolId=<?=$school->schoolId ?>" class="btn btn-page">Voir l'école</a>
                     <?php if ($uri === '/mesEcoles') : ?>
                         <p><a href="deleteEcole?schoolId=<?= $school->schoolId ?>">Supprimer l'école</a></p>
                         <p><a href="updateEcole?schoolId=<?= $school->schoolId ?>">Modifier l'école</a></p>
